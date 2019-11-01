@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'Nama' => ['required', 'string', 'max:255'],
             'tanggallahir' => ['required', 'string', 'max:255'],
             'nomorhp' => ['required', 'string', 'max:255'],
-            'Alamat' => ['required', 'string', 'max:255'],
+            'Alamat' => ['required', 'string', 'max:255']
         ]);
     }
 
@@ -74,7 +74,7 @@ class RegisterController extends Controller
             'Nama' => $data['Nama'],
             'tanggallahir' => $data['tanggallahir'],
             'nomorhp' => $data['nomorhp'],
-            'Alamat' => $data['Alamat'],
+            'Alamat' => $data['Alamat']
         ]);
     }
 }

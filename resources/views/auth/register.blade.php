@@ -14,18 +14,19 @@
   <div class="card-body">
     <div class="row">
       <div class="col-12">
-        <form>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
 
           <input type="hidden" name="role" value="users">
 
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="Email">Email</label>
-              <input type="text" class="form-control email-inputmask" id="Email" placeholder="mail@example.com" name="Email">
+              <input type="text" class="form-control email-inputmask" id="email-mask" placeholder="e.g : mail@example.com" name="email">
             </div>
             <div class="form-group col-md-6">
               <label for="Password">Password</label>
-              <input type="password" class="form-control" id="Password" placeholder="Password" name="Password">
+              <input type="password" class="form-control" id="Password" placeholder="Password" name="password">
             </div>
           </div>
 
@@ -51,7 +52,7 @@
 
           <div class="form-group">
             <label for="Alamat">Alamat</label>
-            <textarea class="form-control" id="Alamat" rows="3" name="Alamat"></textarea>
+            <input type="text" class="form-control" id="Alamat" placeholder="e.g : Aditya S. Widhiantara" name="Alamat">
           </div>
 
           <button type="submit" class="btn btn-primary">Submit</button>
