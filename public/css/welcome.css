@@ -1,0 +1,36 @@
+.cc{
+  margin-top: 10px;
+}
+
+.kartu{
+  margin-top: 100px;
+}
+
+.page-footer{
+  height: 150px;
+}
+
+.s-m a{
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  background: #000000;
+  color: white;
+  margin: 0 6px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  font-size: 20px;
+}
+.s-m a:hover{
+  background: #00c853;
+}
+
+.s-m a i{
+  transition: 0.4s all;
+}
+
+.s-m a:hover > i{
+  transform: scale(1.6) rotate(25deg);
+}
