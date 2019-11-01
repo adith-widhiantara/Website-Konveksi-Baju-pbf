@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/read', 'UserController@index');
+
+// https://www.codepolitan.com/protect-menggunakan-middleware-laravel-59fab97ba55e8
