@@ -10,23 +10,50 @@
 <div class="">
   <img src="img/bg2.jpg" class="img-fluid" alt="Responsive image">
   <div class="card">
+    <div class="card-header daftar">Daftar</div>
   <div class="card-body">
     <div class="row">
       <div class="col-12">
         <form>
+
+          <input type="hidden" name="role" value="users">
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="Email">Email</label>
+              <input type="text" class="form-control email-inputmask" id="Email" placeholder="mail@example.com" name="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="Password">Password</label>
+              <input type="password" class="form-control" id="Password" placeholder="Password" name="Password">
+            </div>
+          </div>
+
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <label for="Nama">Nama Lengkap</label>
+            <input type="text" class="form-control" id="Nama" placeholder="e.g : Aditya S. Widhiantara" name="Nama">
           </div>
+
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="tanggallahir">Tanggal Lahir</label>
+            <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+              <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" name="tanggallahir">
+              <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+              </div>
+            </div>
           </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+          <div class="form-group">
+            <label for="nomorhp">Nomor HP</label>
+            <input type="text" class="form-control phone-inputmask" id="phone-mask" placeholder="" name="nomorhp">
           </div>
+
+          <div class="form-group">
+            <label for="Alamat">Alamat</label>
+            <textarea class="form-control" id="Alamat" rows="3" name="Alamat"></textarea>
+          </div>
+
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
