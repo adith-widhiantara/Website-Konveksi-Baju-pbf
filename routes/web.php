@@ -21,4 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/read', 'UserController@index');
 
+// Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('Admin');
+
 // https://www.codepolitan.com/protect-menggunakan-middleware-laravel-59fab97ba55e8

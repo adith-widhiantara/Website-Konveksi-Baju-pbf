@@ -15,13 +15,12 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-      $user = \App\User::where('email', $request->email)->first();
-              if ($user->role == 'users') {
-                  return redirect('admin/dashboard');
-              } elseif ($user->role == 'admin') {
-                  return redirect('mahasiswa/dashboard');
+
+      if(auth()->user()->role == "admin"){
+                  return $next($request);
               }
 
-        return $next($request);
+      return redirect(‘home’);
+
     }
 }
