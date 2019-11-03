@@ -13,14 +13,11 @@ class Admin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
-
-      if(auth()->user()->role == "admin"){
-                  return $next($request);
+     public function handle($request, Closure $next,...$roles)
+      {
+          if (in_array($request->user()->role,$roles)){
+          return $next($request);
               }
-
-      return redirect(‘home’);
-
-    }
+          return redirect('index');
+      }
 }

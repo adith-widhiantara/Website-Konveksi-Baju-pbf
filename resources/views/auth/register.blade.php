@@ -17,8 +17,6 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-          <input type="hidden" name="role" value="users">
-
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="Email">Email</label>

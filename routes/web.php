@@ -21,6 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/read', 'UserController@index');
 
-// Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('Admin');
+// Multi user login
+Route::post('postlogin', 'AuthController@postlogin');
 
-// https://www.codepolitan.com/protect-menggunakan-middleware-laravel-59fab97ba55e8
+Route::group(['middleware' => ['auth','Admin:admin,user']], function(){
+Route::get('home','AuthController@role');
+});
+// end Multi user login
