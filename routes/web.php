@@ -28,3 +28,5 @@ Route::group(['middleware' => ['auth','Admin:admin,user']], function(){
 Route::get('home','AuthController@role');
 });
 // end Multi user login
+
+Route::get('logout', 'AuthController@logout');

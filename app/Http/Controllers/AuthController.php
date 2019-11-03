@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -22,6 +23,11 @@ class AuthController extends Controller
           }else if (Auth()->user()->role == 'user') {
               return view('home');
           }
+      }
+
+      public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/');
       }
 
     /**
