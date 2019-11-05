@@ -1,1 +1,7 @@
 PHP Version 7.2.11
+
+node v13.0.1
+
+npm 6.12.0
+
+composer v1.9.0
