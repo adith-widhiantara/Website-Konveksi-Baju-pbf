@@ -24,7 +24,7 @@ Route::get('/read', 'UserController@index');
 // Multi user login
 Route::post('postlogin', 'AuthController@postlogin');
 
-Route::group(['middleware' => ['auth','Admin:admin,user']], function(){
+Route::group(['middleware' => ['auth','Admin:admin,user,subadmin']], function(){
 Route::get('home','AuthController@role');
 });
 // end Multi user login
@@ -34,4 +34,5 @@ Route::get('logout', 'AuthController@logout');
 // admin
 Route::get('registeradm', 'AuthController@create');
 Route::get('user', 'AuthController@index');
+Route::post('dftadmin', 'UserController@store');
 // end admin

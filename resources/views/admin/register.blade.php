@@ -14,10 +14,10 @@
   <div class="card-body">
     <div class="row">
       <div class="col-12">
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="dftadmin">
             @csrf
 
-            <input type="hidden" name="role" value="admin">
+            <input type="hidden" name="role" value="subadmin">
 
           <div class="form-row">
             <div class="form-group col-md-6">

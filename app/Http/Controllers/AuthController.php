@@ -22,6 +22,8 @@ class AuthController extends Controller
               return view('admin.home');
           }else if (Auth()->user()->role == 'user') {
               return view('home');
+          }else if (Auth()->user()->role == 'subadmin') {
+              return view('admin.subadmin.home');
           }
       }
 
