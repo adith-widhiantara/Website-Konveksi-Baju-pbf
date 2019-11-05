@@ -5,17 +5,17 @@
 @section('bootstrap')
 <head>
   <!-- <link rel="stylesheet" href="css/assets/vendor/bootstrap/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="css/assets/vendor/fonts/circular-std/style.css">
-  <link rel="stylesheet" href="css/assets/libs/css/style.css">
+  <link rel="stylesheet" href="{{ asset('css/assets/vendor/fonts/circular-std/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/assets/libs/css/style.css') }}">
   <!-- <link rel="stylesheet" href="css/assets/vendor/fonts/fontawesome/css/fontawesome-all.css"> -->
 
-  <link rel="stylesheet" href="css/assets/vendor/charts/chartist-bundle/chartist.css">
-  <link rel="stylesheet" href="css/assets/vendor/charts/morris-bundle/morris.css">
-  <link rel="stylesheet" href="css/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="css/assets/vendor/charts/c3charts/c3.css">
-  <link rel="stylesheet" href="css/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+  <link rel="stylesheet" href="{{ asset('css/assets/vendor/charts/chartist-bundle/chartist.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/assets/vendor/charts/morris-bundle/morris.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/assets/vendor/charts/c3charts/c3.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/assets/vendor/fonts/flag-icon-css/flag-icon.min.css') }}">
 
-  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 </head>
 
 <div class="dashboard-main-wrapper">
@@ -23,14 +23,14 @@
 <!-- Navbar -->
   <div class="dashboard-header">
     <nav class="navbar navbar-expand-lg bg-dark fixed-top">
-        <a href="#" class="brand-logo cc"><img src="img/cc.png" alt=""></a>
+        <a href="#" class="brand-logo cc"><img src="{{ asset('img/cc.png') }}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto navbar-right-top kanan">
                 <li class="nav-item dropdown nav-user">
-                    <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/boy.png" alt="" class="user-avatar-md rounded-circle"></a>
+                    <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('img/boy.png') }}" alt="" class="user-avatar-md rounded-circle"></a>
                     <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                         <div class="nav-user-info">
                             <h5 class="mb-0 text-white nav-user-name">{{ Auth::user()->Nama }}</h5>
@@ -81,7 +81,7 @@
                         <div id="submenu-2" class="collapse submenu bg-light" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">Admin</a>
+                                    <a class="nav-link" href="home/dataadmin">Admin</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="user">Pembeli</a>
@@ -111,28 +111,29 @@
     </div>
 </div>
 <!-- End Left Side Bar -->
-
 </div>
+
+@yield('admin')
 
 <!-- Script -->
     <!-- jquery 3.3.1 -->
-    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="{{ asset('assets/vendor/jquery/jquery-3.3.1.min.js') }}"></script>
     <!-- bootstap bundle js -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
     <!-- slimscroll js -->
-    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="{{ asset('assets/vendor/slimscroll/jquery.slimscroll.js') }}"></script>
     <!-- main js -->
-    <script src="assets/libs/js/main-js.js"></script>
+    <script src="{{ asset('assets/libs/js/main-js.js') }}"></script>
     <!-- chart chartist js -->
-    <script src="assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <script src="{{ asset('assets/vendor/charts/chartist-bundle/chartist.min.js') }}"></script>
     <!-- sparkline js -->
-    <script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <script src="{{ asset('assets/vendor/charts/sparkline/jquery.sparkline.js') }}"></script>
     <!-- morris js -->
-    <script src="assets/vendor/charts/morris-bundle/raphael.min.js"></script>
-    <script src="assets/vendor/charts/morris-bundle/morris.js"></script>
+    <script src="{{ asset('assets/vendor/charts/morris-bundle/raphael.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/charts/morris-bundle/morris.js') }}"></script>
     <!-- chart c3 js -->
-    <script src="assets/vendor/charts/c3charts/c3.min.js"></script>
-    <script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
-    <script src="assets/vendor/charts/c3charts/C3chartjs.js"></script>
-    <script src="assets/libs/js/dashboard-ecommerce.js"></script>
+    <script src="{{ asset('assets/vendor/charts/c3charts/c3.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/charts/c3charts/d3-5.4.0.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/charts/c3charts/C3chartjs.js') }}"></script>
+    <script src="{{ asset('assets/libs/js/dashboard-ecommerce.js') }}"></script>
 @endsection

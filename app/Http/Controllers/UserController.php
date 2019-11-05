@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+    public function indexadmin(){
+      return view('admin.dataadmin');
+    }
+
     /**
      * Display a listing of the resource.
      *

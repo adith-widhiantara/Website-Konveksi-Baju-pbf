@@ -35,4 +35,5 @@ Route::get('logout', 'AuthController@logout');
 Route::get('registeradm', 'AuthController@create');
 Route::get('user', 'AuthController@index');
 Route::post('dftadmin', 'UserController@store');
+Route::get('home/dataadmin', 'UserController@indexadmin');
 // end admin
