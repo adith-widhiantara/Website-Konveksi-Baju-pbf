@@ -12,11 +12,13 @@
     <div class="container">
       <a href="#" class="brand-logo cc"><img src="img/cc.png" alt=""></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="">Daftar</a></li>
-        <li><a href="">Masuk</a></li>
-        <li><a class='dropdown-trigger btn' href='#' data-target='dropdown1'>{{ Auth::user()->Nama }}</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Produk Kami</a></li>
+        <li><a href="">Keranjang</a></li>
+        <li><a class='dropdown-trigger btn grey darken-3 akun' href='#' data-target='dropdown1'>{{ Auth::user()->Nama }}</a></li>
 
         <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#!">Lihat Akun</a></li>
           <li><a href="#!">Ubah Akun</a></li>
           <li><a href="logout">Keluar</a></li>
         </ul>

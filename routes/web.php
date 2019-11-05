@@ -30,3 +30,8 @@ Route::get('home','AuthController@role');
 // end Multi user login
 
 Route::get('logout', 'AuthController@logout');
+
+// admin
+Route::get('registeradm', 'AuthController@create');
+Route::get('user', 'AuthController@index');
+// end admin

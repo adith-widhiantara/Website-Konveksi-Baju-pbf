@@ -8,7 +8,7 @@
 </head>
 
 <div class="">
-  <img src="img/bg2.jpg" class="img-fluid" alt="Responsive image">
+  <img style="width: 100%" src="img/bg2.jpg" class="img-fluid" alt="Responsive image">
   <div class="card">
     <div class="card-header daftar">Daftar</div>
   <div class="card-body">
@@ -16,6 +16,8 @@
       <div class="col-12">
         <form method="POST" action="{{ route('register') }}">
             @csrf
+
+            <input type="hidden" name="role" value="user">
 
           <div class="form-row">
             <div class="form-group col-md-6">

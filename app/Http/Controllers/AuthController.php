@@ -47,7 +47,7 @@ class AuthController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.register');
     }
 
     /**
