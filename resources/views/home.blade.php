@@ -13,7 +13,7 @@
       <a href="#" class="brand-logo cc"><img src="img/cc.png" alt=""></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="">Home</a></li>
-        <li><a href="">Produk Kami</a></li>
+        <li><a href="home/product">Produk Kami</a></li>
         <li><a href="">Keranjang</a></li>
         <li><a class='dropdown-trigger btn grey darken-3 akun' href='#' data-target='dropdown1'>{{ Auth::user()->Nama }}</a></li>
 

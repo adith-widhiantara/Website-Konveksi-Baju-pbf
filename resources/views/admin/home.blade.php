@@ -23,7 +23,7 @@
 <!-- Navbar -->
   <div class="dashboard-header">
     <nav class="navbar navbar-expand-lg bg-dark fixed-top">
-        <a href="#" class="brand-logo cc"><img src="{{ asset('img/cc.png') }}" alt=""></a>
+        <a href="{{ url('home') }}" class="brand-logo cc"><img src="{{ asset('img/cc.png') }}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,8 +37,8 @@
                             <span class="status"></span><span class="ml-2">Selamat Bekerja</span>
                         </div>
                         <a class="dropdown-item" href="#"><i class="fa fa-user-o mr-2"></i>Akun</a>
-                        <a class="dropdown-item" href="registeradm"><i class="fa fa-user-o mr-2"></i>Daftarkan Admin</a>
-                        <a class="dropdown-item" href="logout"><i class="fa fa-sign-out mr-2"></i>Logout</a>
+                        <a class="dropdown-item" href="{{url('registeradm')}}"><i class="fa fa-user-o mr-2"></i>Daftarkan Admin</a>
+                        <a class="dropdown-item" href="{{url('logout')}}"><i class="fa fa-sign-out mr-2"></i>Logout</a>
                     </div>
                 </li>
             </ul>
@@ -81,10 +81,10 @@
                         <div id="submenu-2" class="collapse submenu bg-light" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="home/dataadmin">Admin</a>
+                                    <a class="nav-link" href="{{url('home/dataadmin')}}">Admin</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="user">Pembeli</a>
+                                    <a class="nav-link" href="{{url('home/datacust')}}">Pembeli</a>
                                 </li>
                             </ul>
                         </div>
@@ -115,25 +115,4 @@
 
 @yield('admin')
 
-<!-- Script -->
-    <!-- jquery 3.3.1 -->
-    <script src="{{ asset('assets/vendor/jquery/jquery-3.3.1.min.js') }}"></script>
-    <!-- bootstap bundle js -->
-    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
-    <!-- slimscroll js -->
-    <script src="{{ asset('assets/vendor/slimscroll/jquery.slimscroll.js') }}"></script>
-    <!-- main js -->
-    <script src="{{ asset('assets/libs/js/main-js.js') }}"></script>
-    <!-- chart chartist js -->
-    <script src="{{ asset('assets/vendor/charts/chartist-bundle/chartist.min.js') }}"></script>
-    <!-- sparkline js -->
-    <script src="{{ asset('assets/vendor/charts/sparkline/jquery.sparkline.js') }}"></script>
-    <!-- morris js -->
-    <script src="{{ asset('assets/vendor/charts/morris-bundle/raphael.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/charts/morris-bundle/morris.js') }}"></script>
-    <!-- chart c3 js -->
-    <script src="{{ asset('assets/vendor/charts/c3charts/c3.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/charts/c3charts/d3-5.4.0.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/charts/c3charts/C3chartjs.js') }}"></script>
-    <script src="{{ asset('assets/libs/js/dashboard-ecommerce.js') }}"></script>
 @endsection

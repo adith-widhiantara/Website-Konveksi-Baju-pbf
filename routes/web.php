@@ -36,4 +36,9 @@ Route::get('registeradm', 'AuthController@create');
 Route::get('user', 'AuthController@index');
 Route::post('dftadmin', 'UserController@store');
 Route::get('home/dataadmin', 'UserController@indexadmin');
+Route::get('home/datacust', 'UserController@indexcust');
 // end admin
+
+// User
+Route::get('home/product', 'ProductController@kain');
+// End User

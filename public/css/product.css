@@ -1,0 +1,33 @@
+.daftar{
+  font-size: 40px;
+  text-align: center;
+}
+
+.form1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+label {
+    width: 100%;
+}
+
+.card-input-element {
+    display: none;
+}
+
+.card-input {
+    margin: 10px;
+    padding: 00px;
+}
+
+.card-input:hover {
+    cursor: pointer;
+}
+
+.card-input-element:checked + .card-input {
+     box-shadow: 0 0 1px 1px #2ecc71;
+ }

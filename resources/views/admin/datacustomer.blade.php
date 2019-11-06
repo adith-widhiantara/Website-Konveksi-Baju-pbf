@@ -19,7 +19,7 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="mb-0">Data Admin Custom Clothing</h5>
+                                <h5 class="mb-0">Data Customer Custom Clothing</h5>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -35,14 +35,14 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          @foreach( $dataadmin as $admin)
+                                          @foreach( $datacust as $cust)
                                           <tr>
                                             <td>{{ $loop -> iteration     }}</td>
-                                            <td>{{ $admin -> email        }}</td>
-                                            <td>{{ $admin -> Nama         }}</td>
-                                            <td>{{ $admin -> tanggallahir }}</td>
-                                            <td>{{ $admin -> nomorhp      }}</td>
-                                            <td>{{ $admin -> Alamat       }}</td>
+                                            <td>{{ $cust -> email        }}</td>
+                                            <td>{{ $cust -> Nama         }}</td>
+                                            <td>{{ $cust -> tanggallahir }}</td>
+                                            <td>{{ $cust -> nomorhp      }}</td>
+                                            <td>{{ $cust -> Alamat       }}</td>
                                           </tr>
                                           @endforeach
                                         </tbody>

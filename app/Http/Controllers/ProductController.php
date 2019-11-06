@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use Illuminate\Support\Facades\Hash;
+use App\Product;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class ProductController extends Controller
 {
 
-    public function indexadmin(){
-      $dataadmin = User::where('role', 'subadmin')->get();
-      return view('admin.dataadmin', ['dataadmin' => $dataadmin]);
-    }
-
-    public function indexcust(){
-      $datacust = User::where('role', 'user')->get();
-      return view('admin.datacustomer', ['datacust' => $datacust]);
+    public function kain()
+    {
+      return view('user.kain');
     }
 
     /**
@@ -26,7 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.read');
+        //
     }
 
     /**
@@ -47,26 +41,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        User::create([
-            'role' => $request['role'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-            'Nama' => $request['Nama'],
-            'tanggallahir' => $request['tanggallahir'],
-            'nomorhp' => $request['nomorhp'],
-            'Alamat' => $request['Alamat']
-        ]);
-
-        return redirect('home');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
         //
     }
@@ -74,10 +58,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
         //
     }
@@ -86,10 +70,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
         //
     }
@@ -97,10 +81,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
         //
     }
