@@ -28,7 +28,7 @@
 
       <div class="form-group">
         <label for="exampleFormControlFile1">Upload Gambar Kain</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
+        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
       </div>
 
       <button type="submit" class="btn btn-primary oke">Submit</button>
@@ -36,4 +36,36 @@
     </form>
   </div>
 </div>
+
+<!-- Hoverable Table -->
+<div class="tabelhover">
+  <div class="col-8">
+    <div class="card">
+      <h5 class="card-header">Data Kain Custom Clothing</h5>
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Jenis Kain</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Gambar</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach( $product as $pro )
+            <tr>
+              <td>{{ $loop -> iteration}}</td>
+              <td>{{ $pro -> jeniskain }}</td>
+              <td>{{ $pro -> stock     }}</td>
+              <td><img src="{{ url('imgupl/kain/'.$pro -> file) }}" alt="..." class="img-thumbnail"></td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Hoverable Table -->
 @endsection

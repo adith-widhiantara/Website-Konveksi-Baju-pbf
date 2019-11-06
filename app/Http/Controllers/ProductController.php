@@ -10,11 +10,12 @@ class ProductController extends Controller
 
     public function bahankain()
     {
+      $product = Product::all();
       $role = Auth()->user()->role;
       if (Auth()->user()->role == 'admin') {
 
       }else if (Auth()->user()->role == 'subadmin') {
-          return view('admin.subadmin.bahankain');
+          return view('admin.subadmin.bahankain', ['product' => $product]);
       }
     }
 
@@ -51,9 +52,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->all());
+      $this->validate($request, [
+        'jeniskain' => 'required',
+        'stock' => 'required',
+    		'file' => 'required',
+    	]);
 
-        return redirect('home');
+		    $file = $request->file('file');
+        $nama_file = time()."_".$file->getClientOriginalName();
+
+        $tujuan_upload = 'imgupl/kain';
+		    $file->move($tujuan_upload,$nama_file);
+
+    Product::create([
+    			'jeniskain' => $request->jeniskain,
+          'stock' => $request->stock,
+          'file' => $nama_file,
+    		]);
+
+        return redirect('home/bahankain');
     }
 
     /**
