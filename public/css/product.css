@@ -1,3 +1,7 @@
+body{
+  height: 2000px;
+}
+
 .daftar{
   font-size: 40px;
   text-align: center;
@@ -5,11 +9,10 @@
 
 .form1{
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 label {
     width: 100%;
@@ -31,3 +34,7 @@ label {
 .card-input-element:checked + .card-input {
      box-shadow: 0 0 1px 1px #2ecc71;
  }
+
+.gambar img{
+  height: 300px;
+}

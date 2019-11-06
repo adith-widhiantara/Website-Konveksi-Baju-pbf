@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('logout', 'AuthController@logout');
 Route::get('/read', 'UserController@index');
 
 // Multi user login
@@ -29,14 +29,14 @@ Route::get('home','AuthController@role');
 });
 // end Multi user login
 
-Route::get('logout', 'AuthController@logout');
-
 // admin
 Route::get('registeradm', 'AuthController@create');
 Route::get('user', 'AuthController@index');
 Route::post('dftadmin', 'UserController@store');
 Route::get('home/dataadmin', 'UserController@indexadmin');
 Route::get('home/datacust', 'UserController@indexcust');
+Route::get('home/bahankain', 'ProductController@bahankain');
+Route::post('home/bahankain/upload', 'ProductController@store');
 // end admin
 
 // User

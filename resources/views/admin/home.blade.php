@@ -65,7 +65,7 @@
                         <div id="submenu-1" class="collapse submenu bg-light" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">Bahan</a>
+                                    <a class="nav-link" href="{{ url('home/bahankain') }}">Bahan</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="">Desain</a>

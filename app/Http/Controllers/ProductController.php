@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
 
+    public function bahankain()
+    {
+      $role = Auth()->user()->role;
+      if (Auth()->user()->role == 'admin') {
+
+      }else if (Auth()->user()->role == 'subadmin') {
+          return view('admin.subadmin.bahankain');
+      }
+    }
+
     public function kain()
     {
       return view('user.kain');
@@ -41,7 +51,9 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Product::create($request->all());
+
+        return redirect('home');
     }
 
     /**

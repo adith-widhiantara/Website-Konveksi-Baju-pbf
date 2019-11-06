@@ -8,80 +8,64 @@
 </head>
 
 <div class="">
-  <img style="width: 100%" src="{{ asset('img/bg2.jpg') }}" class="img-fluid" alt="Responsive image">
+  <img style="width: 100%; height: auto;" src="{{ asset('img/listkain/backgroundkain.jpg') }}" class="img-fluid" alt="Responsive image">
   <div class="card form1">
-    <div class="card-header daftar">Daftar</div>
-  <div class="card-body">
+    <div class="card-header daftar">Pilih Kain</div>
+  <div class="card-body gambar">
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="">
             @csrf
 
             <div class="row">
-
               <div class="col-md-4 col-lg-4 col-sm-4">
-
                 <label>
                   <input type="radio" name="product" class="card-input-element" />
-
                   <div class="card panel panel-default card-input">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ asset('img/listkain/carded.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div>
-
-                </label>
-
-              </div>
-              <div class="col-md-4 col-lg-4 col-sm-4">
-
-                <label>
-                  <input type="radio" name="product" class="card-input-element" />
-
-                  <div class="card panel panel-default card-input">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                   </div>
                 </label>
-
-              </div>
-              <div class="col-md-4 col-lg-4 col-sm-4">
-
-                <label>
-                  <input type="radio" name="product" class="card-input-element" />
-
-                  <div class="card panel panel-default card-input">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div>
-                </label>
-
               </div>
 
               <div class="col-md-4 col-lg-4 col-sm-4">
-
                 <label>
                   <input type="radio" name="product" class="card-input-element" />
-
                   <div class="card panel panel-default card-input">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ asset('img/listkain/combed30s.PNG') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                   </div>
-
                 </label>
-
               </div>
-          </div>
+
+              <div class="col-md-4 col-lg-4 col-sm-4">
+                <label>
+                  <input type="radio" name="product" class="card-input-element" />
+                  <div class="card panel panel-default card-input">
+                    <img src="{{ asset('img/listkain/hyget.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                    </div>
+                  </div>
+                </label>
+              </div>
+
+              <div class="col-md-4 col-lg-4 col-sm-4">
+                <label>
+                  <input type="radio" name="product" class="card-input-element" />
+                  <div class="card panel panel-default card-input">
+                    <img src="{{ asset('img/listkain/tc.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                    </div>
+                  </div>
+                </label>
+              </div>
+
+            </div>
 
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -89,4 +73,5 @@
   </div>
 </div>
 </div>
+
 @endsection
