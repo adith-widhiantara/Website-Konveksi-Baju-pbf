@@ -26,6 +26,15 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="formGroupExampleInput">Keterangan Kain</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" name="keterangan">
+          </div>
+        </div>
+      </div>
+
       <div class="form-group">
         <label for="exampleFormControlFile1">Upload Gambar Kain</label>
         <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
@@ -49,6 +58,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Jenis Kain</th>
                 <th scope="col">Stock</th>
+                <th scope="col">Keterangan</th>
                 <th scope="col">Gambar</th>
             </tr>
           </thead>
@@ -58,6 +68,7 @@
               <td>{{ $loop -> iteration}}</td>
               <td>{{ $pro -> jeniskain }}</td>
               <td>{{ $pro -> stock     }}</td>
+              <td>{{ $pro -> keterangan     }}</td>
               <td><img src="{{ url('imgupl/kain/'.$pro -> file) }}" alt="..." class="img-thumbnail"></td>
             </tr>
             @endforeach

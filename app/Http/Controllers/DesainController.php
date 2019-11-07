@@ -2,26 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
+use App\Desain;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class DesainController extends Controller
 {
 
-    public function bahankain()
+    public function desain()
     {
-      $product = Product::all();
+      $desain = Desain::all();
       $role = Auth()->user()->role;
       if (Auth()->user()->role == 'admin') {
-          return view('admin.product.bahankainadmin', ['product' => $product]);
+          return view('admin.product.desain', ['desain' => $desain]);
       }else if (Auth()->user()->role == 'subadmin') {
-          return view('admin.subadmin.product.bahankain', ['product' => $product]);
-      }
-    }
 
-    public function kain()
-    {
-      return view('user.kain');
+      }
     }
 
     /**
@@ -53,35 +48,33 @@ class ProductController extends Controller
     public function store(Request $request)
     {
       $this->validate($request, [
-        'jeniskain' => 'required',
-        'stock' => 'required',
-        'keterangan' => 'required',
-    		'file' => 'required',
-    	]);
+        'nama' => 'required',
+        'arti' => 'required',
+        'file' => 'required',
+      ]);
 
-		    $file = $request->file('file');
+        $file = $request->file('file');
         $nama_file = time()."_".$file->getClientOriginalName();
 
-        $tujuan_upload = 'imgupl/kain';
-		    $file->move($tujuan_upload,$nama_file);
+        $tujuan_upload = 'imgupl/desain';
+        $file->move($tujuan_upload,$nama_file);
 
-        Product::create([
-    			'jeniskain' => $request->jeniskain,
-          'stock' => $request->stock,
-          'keterangan' => $request->keterangan,
+        Desain::create([
+          'nama' => $request->nama,
+          'arti' => $request->arti,
           'file' => $nama_file,
-    		]);
+        ]);
 
-        return redirect('home/bahankain');
+        return redirect('home/desain');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
         //
     }
@@ -89,10 +82,10 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
         //
     }
@@ -101,10 +94,10 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -112,10 +105,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
         //
     }

@@ -68,7 +68,7 @@
                                     <a class="nav-link" href="{{ url('home/bahankain') }}">Bahan</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">Desain</a>
+                                    <a class="nav-link" href="{{ url('home/desain') }}">Desain</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="">Stock</a>
@@ -113,6 +113,12 @@
 <!-- End Left Side Bar -->
 </div>
 
+<div class="dashboard-wrapper">
+  <div class="dashboard-finance">
+    <div class="container-fluid dashboard-content">
 @yield('admin')
+    </div>
+  </div>
+</div>
 
 @endsection

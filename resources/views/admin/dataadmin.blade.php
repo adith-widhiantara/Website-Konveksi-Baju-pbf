@@ -9,9 +9,6 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('css/assets/vendor/datatables/css/fixedHeader.bootstrap4.css') }}">
 </head>
 
-<div class="dashboard-wrapper">
-  <div class="dashboard-finance">
-    <div class="container-fluid dashboard-content">
       <div class="row">
                     <!-- ============================================================== -->
                     <!-- data table  -->
@@ -65,7 +62,4 @@
                     <!-- end data table  -->
                     <!-- ============================================================== -->
                 </div>
-    </div>
-  </div>
-</div>
 @endsection

@@ -37,7 +37,6 @@
                             <span class="status"></span><span class="ml-2">Selamat Bekerja</span>
                         </div>
                         <a class="dropdown-item" href="#"><i class="fa fa-user-o mr-2"></i>Akun</a>
-                        <a class="dropdown-item" href="{{url('registeradm')}}"><i class="fa fa-user-o mr-2"></i>Daftarkan Admin</a>
                         <a class="dropdown-item" href="{{url('logout')}}"><i class="fa fa-sign-out mr-2"></i>Logout</a>
                     </div>
                 </li>

@@ -37,6 +37,8 @@ Route::get('home/dataadmin', 'UserController@indexadmin');
 Route::get('home/datacust', 'UserController@indexcust');
 Route::get('home/bahankain', 'ProductController@bahankain');
 Route::post('home/bahankain/upload', 'ProductController@store');
+Route::get('home/desain', 'DesainController@desain');
+Route::post('home/desain/upload', 'DesainController@store');
 // end admin
 
 // User
