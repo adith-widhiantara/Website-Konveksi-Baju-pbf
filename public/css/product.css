@@ -1,5 +1,27 @@
 body{
-  height: 2000px;
+  height: auto;
+}
+
+.cc{
+  margin-left: 100px;
+}
+
+.boy{
+  height: 30px;
+}
+
+.kanan{
+  margin-right: 100px;
+}
+
+.nav-user-info h5{
+  color: #000000;
+}
+
+.kain img{
+  width: 100%;
+  height: auto;
+  background-repeat: repeat;
 }
 
 .daftar{
@@ -9,9 +31,9 @@ body{
 
 .form1{
   position: absolute;
-  top: 60%;
+  top: 100px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
 }
 
 label {
@@ -36,5 +58,5 @@ label {
  }
 
 .gambar img{
-  height: 300px;
+  height: 150px;
 }

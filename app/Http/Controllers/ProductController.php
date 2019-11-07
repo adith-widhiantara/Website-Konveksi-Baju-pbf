@@ -19,11 +19,6 @@ class ProductController extends Controller
       }
     }
 
-    public function kain()
-    {
-      return view('user.kain');
-    }
-
     /**
      * Display a listing of the resource.
      *
