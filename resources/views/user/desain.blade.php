@@ -31,7 +31,7 @@
     <img src="{{ asset('img/listkain/backgroundkain.jpg') }}" class="img-fluid kain" alt="Responsive image">
   </div>
   <div class="card form1">
-    <div class="card-header daftar">Pilih Kain</div>
+    <div class="card-header daftar">Pilih Desain</div>
   <div class="card-body gambar">
 
         <form method="POST" action="">
@@ -39,14 +39,14 @@
 
 
             <div class="row">
-              @foreach( $product as $pro )
+              @foreach( $desain as $des )
               <div class="col-md-4 col-lg-4 col-sm-4">
                 <label>
                   <input type="radio" name="product" class="card-input-element" />
                   <div class="card panel panel-default card-input">
-                    <img src="{{ asset('imgupl/kain/'.$pro -> file) }}" class="card-img-top" alt="...">
+                    <img src="{{ asset('imgupl/desain/'.$des -> file) }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">{{ $pro -> jeniskain }}</h5>
+                      <h5 class="card-title">{{ $des -> nama }}</h5>
                     </div>
                   </div>
                 </label>

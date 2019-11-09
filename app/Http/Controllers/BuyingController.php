@@ -3,13 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Buy;
+use App\Product;
+use App\Desain;
 use Illuminate\Http\Request;
 
 class BuyingController extends Controller
 {
     public function kain()
     {
-      return view('user.kain');
+      $product = Product::all();
+      return view('user.kain', ['product' => $product]);
+    }
+
+    public function desain()
+    {
+      $desain = Desain::all();
+      return view('user.desain', ['desain' => $desain]);
     }
 
     /**

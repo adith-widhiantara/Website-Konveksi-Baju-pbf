@@ -19,7 +19,6 @@
 
         <ul id='dropdown1' class='dropdown-content'>
           <li><a href="#!">Lihat Akun</a></li>
-          <li><a href="#!">Ubah Akun</a></li>
           <li><a href="logout">Keluar</a></li>
         </ul>
       </ul>

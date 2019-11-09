@@ -43,4 +43,5 @@ Route::post('home/desain/upload', 'DesainController@store');
 
 // User
 Route::get('home/product', 'BuyingController@kain');
+Route::get('home/product/desain', 'BuyingController@desain');
 // End User
