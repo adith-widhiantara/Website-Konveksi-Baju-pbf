@@ -33,15 +33,20 @@ Route::get('home','AuthController@role');
 Route::get('registeradm', 'AuthController@create');
 Route::get('user', 'AuthController@index');
 Route::post('dftadmin', 'UserController@store');
-Route::get('home/dataadmin', 'UserController@indexadmin');
-Route::get('home/datacust', 'UserController@indexcust');
-Route::get('home/bahankain', 'ProductController@bahankain');
-Route::post('home/bahankain/upload', 'ProductController@store');
-Route::get('home/desain', 'DesainController@desain');
-Route::post('home/desain/upload', 'DesainController@store');
+Route::prefix('home')->group(function () {
+  Route::get('dataadmin', 'UserController@indexadmin');
+  Route::get('datacust', 'UserController@indexcust');
+  Route::get('bahankain', 'ProductController@bahankain');
+  Route::post('bahankain/upload', 'ProductController@store');
+  Route::get('desain', 'DesainController@desain');
+  Route::post('desain/upload', 'DesainController@store');
+});
 // end admin
 
 // User
-Route::get('home/product', 'BuyingController@kain');
-Route::get('home/product/desain', 'BuyingController@desain');
+Route::prefix('home')->group(function () {
+  Route::get('product', 'BuyingController@kain');
+  Route::post('product', 'BuyingController@upkain');
+  Route::get('product/desain', 'BuyingController@desain');
+});
 // End User

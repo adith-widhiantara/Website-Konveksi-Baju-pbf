@@ -130,9 +130,39 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
+      'attribute-name' => [
+          'rule-name' => 'custom-message',
+      ],
+
+      'email' => [
+          'required' => 'Tolong tulis :attribute anda!',
+          'unique' => ':attribute yang anda tulis sudah terdaftar.',
+      ],
+
+      'password' => [
+          'required' => 'Tolong tulis :attribute anda!',
+          'unique' => ':attribute yang anda tulis sudah terdaftar.',
+      ],
+
+      'Nama' => [
+          'required' => 'Tolong tulis :attribute anda!',
+          'unique' => ':attribute yang anda tulis sudah terdaftar.',
+      ],
+
+      'tanggallahir' => [
+          'required' => 'Tolong tulis tanggal lahir anda!',
+          'unique' => ':attribute yang anda tulis sudah terdaftar.',
+      ],
+
+      'nomorhp' => [
+          'required' => 'Tolong tulis nomor HP anda!',
+          'unique' => ':attribute yang anda tulis sudah terdaftar.',
+      ],
+
+      'Alamat' => [
+          'required' => 'Tolong tulis :attribute anda!',
+          'unique' => ':attribute yang anda tulis sudah terdaftar.',
+      ],
     ],
 
     /*

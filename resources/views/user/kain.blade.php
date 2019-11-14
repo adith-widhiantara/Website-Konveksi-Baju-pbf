@@ -34,15 +34,13 @@
     <div class="card-header daftar">Pilih Kain</div>
   <div class="card-body gambar">
 
-        <form method="POST" action="">
+        <form action="product" method="post">
             @csrf
-
-
             <div class="row">
               @foreach( $product as $pro )
               <div class="col-md-4 col-lg-4 col-sm-4">
                 <label>
-                  <input type="radio" name="product" class="card-input-element" />
+                  <input type="radio" name="id_kain" class="card-input-element" value="{{ $pro -> id }}" />
                   <div class="card panel panel-default card-input">
                     <img src="{{ asset('imgupl/kain/'.$pro -> file) }}" class="card-img-top" alt="...">
                     <div class="card-body">

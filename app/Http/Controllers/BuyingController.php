@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Buy;
 use App\Product;
 use App\Desain;
@@ -13,6 +14,16 @@ class BuyingController extends Controller
     {
       $product = Product::all();
       return view('user.kain', ['product' => $product]);
+    }
+
+    public function upkain(Request $request)
+    {
+      Buy::create([
+          'id_buyer' => [Auth::user()->id],
+          'id_kain' => $request['id_kain'],
+      ]);
+
+      return redirect('home/product/desain');
     }
 
     public function desain()
