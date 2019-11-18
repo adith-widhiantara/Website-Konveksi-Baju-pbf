@@ -15,15 +15,10 @@ class CreateBuysTable extends Migration
     {
         Schema::create('buys', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id_kain');
-            $table->string('nama_kain');
-            $table->string('gambar_kain');
+            $table->integer('user_id');
+            $table->integer('product_id');
             $table->string('id_baju');
-            $table->string('nama_baju');
-            $table->string('gambar_baju');
             $table->string('id_desain');
-            $table->string('nama_desain');
-            $table->string('gambar_desain');
             $table->string('ukuran');
             $table->timestamps();
         });

@@ -19,8 +19,8 @@ class BuyingController extends Controller
     public function upkain(Request $request)
     {
       Buy::create([
-          'id_buyer' => [Auth::user()->id],
-          'id_kain' => $request['id_kain'],
+          'user_id' => [Auth::user()->id],
+          'product_id' => $request['product_id'],
       ]);
 
       return redirect('home/product/desain');

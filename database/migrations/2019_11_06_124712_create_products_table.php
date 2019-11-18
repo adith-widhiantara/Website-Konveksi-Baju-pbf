@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('jeniskain');
             $table->integer('stock');
-            $table->integer('keterangan');
+            $table->string('keterangan');
             $table->string('file');
             $table->timestamps();
         });
