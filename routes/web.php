@@ -48,5 +48,6 @@ Route::prefix('home')->group(function () {
   Route::get('product', 'BuyingController@kain');
   Route::post('product', 'BuyingController@upkain');
   Route::get('product/desain', 'BuyingController@desain');
+  Route::post('product/desain', 'BuyingController@updesain');
 });
 // End User

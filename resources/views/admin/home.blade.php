@@ -68,10 +68,10 @@
                                     <a class="nav-link" href="{{ url('home/bahankain') }}">Bahan</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('home/desain') }}">Desain</a>
+                                    <a class="nav-link" href="{{ url('home/warna') }}">Warna</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">Stock</a>
+                                    <a class="nav-link" href="{{ url('home/desain') }}">Desain</a>
                                 </li>
                             </ul>
                         </div>

@@ -1,6 +1,6 @@
 @extends('base.bootstrap')
 
-@section('title', 'Daftar')
+@section('title', 'Custom Clothing')
 
 @section('bootstrap')
 <head>
@@ -22,7 +22,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="Email">Email</label>
-              <input type="text" class="form-control email-inputmask @error('email') is-invalid @enderror" id="email-mask" placeholder="e.g : mail@example.com" name="email">
+              <input type="text" class="form-control email-inputmask @error('email') is-invalid @enderror" id="email-mask" placeholder="e.g : mail@example.com" name="email" value="{{ old('email') }}">
               @error('email')
                 <div class="invalid-feedback">{{ $message }}</div>
               @enderror
@@ -41,7 +41,7 @@
 
           <div class="form-group">
             <label for="Nama">Nama Lengkap</label>
-            <input type="text" class="form-control @error('Nama') is-invalid @enderror" id="Nama" placeholder="e.g : Aditya S. Widhiantara" name="Nama">
+            <input type="text" class="form-control @error('Nama') is-invalid @enderror" id="Nama" placeholder="e.g : Aditya S. Widhiantara" name="Nama" value="{{ old('Nama') }}">
             @error('Nama')
               <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -50,7 +50,7 @@
           <div class="form-group">
             <label for="tanggallahir">Tanggal Lahir</label>
             <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-              <input type="text" class="form-control datetimepicker-input @error('tanggallahir') is-invalid @enderror" data-target="#datetimepicker4" name="tanggallahir">
+              <input type="text" class="form-control datetimepicker-input @error('tanggallahir') is-invalid @enderror" data-target="#datetimepicker4" name="tanggallahir" value="{{ old('tanggallahir') }}">
               <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
                 <div class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></div>
               </div>
@@ -62,7 +62,7 @@
 
           <div class="form-group">
             <label for="nomorhp">Nomor HP</label>
-            <input type="text" class="form-control phone-inputmask @error('nomorhp') is-invalid @enderror" id="phone-mask" placeholder="" name="nomorhp">
+            <input type="text" class="form-control phone-inputmask @error('nomorhp') is-invalid @enderror" id="phone-mask" placeholder="" name="nomorhp" value="{{ old('nomorhp') }}">
             @error('nomorhp')
               <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -70,13 +70,15 @@
 
           <div class="form-group">
             <label for="Alamat">Alamat</label>
-            <input type="text" class="form-control @error('Alamat') is-invalid @enderror" id="Alamat" placeholder="e.g : Aditya S. Widhiantara" name="Alamat">
+            <input type="text" class="form-control @error('Alamat') is-invalid @enderror" id="Alamat" placeholder="e.g : Aditya S. Widhiantara" name="Alamat" value="{{ old('Alamat') }}">
             @error('Alamat')
               <div class="invalid-feedback">{{ $message }}</div>
             @enderror
           </div>
 
+          <a href="{{ url('/') }}" class="btn btn-outline-primary">Kembali</a>
           <button type="submit" class="btn btn-primary">Submit</button>
+          <p style="float: right;">Sudah punya akun? Klik <a href="{{ url('/login') }}">disini</a></p>
         </form>
       </div>
     </div>

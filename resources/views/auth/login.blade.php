@@ -39,7 +39,13 @@
               @enderror
             </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+
+
+  <a href="{{ url('/') }}" class="btn btn-outline-primary">Kembali</a>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <p style="float: right;">Belum punya akun? Klik <a href="{{ url('/register') }}">disini</a></p>
+
+
         </form>
       </div>
     </div>

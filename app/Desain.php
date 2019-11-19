@@ -9,4 +9,9 @@ class Desain extends Model
   protected $fillable = [
     'nama','arti', 'file'
   ];
+
+  public function buy()
+  {
+    return $this->hasMany(Buy::class);
+  }
 }

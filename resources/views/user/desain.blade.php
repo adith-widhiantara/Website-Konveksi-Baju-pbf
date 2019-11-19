@@ -42,7 +42,7 @@
               @foreach( $desain as $des )
               <div class="col-md-4 col-lg-4 col-sm-4">
                 <label>
-                  <input type="radio" name="product" class="card-input-element" />
+                  <input type="radio" name="desain_id" class="card-input-element" value="{{ $des -> id }}"/>
                   <div class="card panel panel-default card-input">
                     <img src="{{ asset('imgupl/desain/'.$des -> file) }}" class="card-img-top" alt="...">
                     <div class="card-body">

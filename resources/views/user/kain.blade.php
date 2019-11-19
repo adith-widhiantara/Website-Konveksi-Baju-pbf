@@ -41,7 +41,12 @@
               <div class="col-md-4 col-lg-4 col-sm-4">
                 <label>
                   <input type="radio" name="product_id" class="card-input-element" value="{{ $pro -> id }}" />
-
+                  <div class="card panel panel-default card-input">
+                    <img src="{{ asset('imgupl/kain/'.$pro -> file) }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ $pro -> jeniskain }}</h5>
+                    </div>
+                  </div>
                 </label>
               </div>
               @endforeach

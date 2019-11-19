@@ -2,44 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use App\Buy;
-use App\Product;
-use App\Desain;
+use App\Color;
 use Illuminate\Http\Request;
 
-class BuyingController extends Controller
+class ColorController extends Controller
 {
-    public function kain()
-    {
-      $product = Product::all();
-      return view('user.kain', ['product' => $product]);
-    }
-
-    public function upkain(Request $request)
-    {
-      $buy = new Buy;
-      $buy->product_id = $request->product_id;
-      Auth::user()->buy()->save($buy);
-
-      return redirect('home/product/desain');
-    }
-
-    public function desain()
-    {
-      $desain = Desain::all();
-      return view('user.desain', ['desain' => $desain]);
-    }
-
-    public function updesain(Request $request){
-      Buy::where('user_id', Auth::user()->id)
-            ->update([
-            'desain_id' => $request -> desain_id,
-          ]);
-
-      return redirect('/home');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -74,10 +41,10 @@ class BuyingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Buy  $buy
+     * @param  \App\Color  $color
      * @return \Illuminate\Http\Response
      */
-    public function show(Buy $buy)
+    public function show(Color $color)
     {
         //
     }
@@ -85,10 +52,10 @@ class BuyingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Buy  $buy
+     * @param  \App\Color  $color
      * @return \Illuminate\Http\Response
      */
-    public function edit(Buy $buy)
+    public function edit(Color $color)
     {
         //
     }
@@ -97,10 +64,10 @@ class BuyingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Buy  $buy
+     * @param  \App\Color  $color
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Buy $buy)
+    public function update(Request $request, Color $color)
     {
         //
     }
@@ -108,10 +75,10 @@ class BuyingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Buy  $buy
+     * @param  \App\Color  $color
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Buy $buy)
+    public function destroy(Color $color)
     {
         //
     }
