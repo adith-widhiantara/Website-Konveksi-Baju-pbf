@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="{{ url('css/productadmin.css') }}">
 </head>
 
+<!-- Form -->
 <div class="row">
   <div class="col-6">
     <form action="{{ url('home/desain/upload' )}}" method="post" enctype="multipart/form-data">
@@ -36,6 +37,7 @@
     </form>
   </div>
 </div>
+<!-- End Form -->
 
 <!-- Hoverable Table -->
 <div class="tabelhover">

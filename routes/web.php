@@ -40,6 +40,8 @@ Route::prefix('home')->group(function () {
   Route::post('bahankain/upload', 'ProductController@store');
   Route::get('desain', 'DesainController@desain');
   Route::post('desain/upload', 'DesainController@store');
+  Route::get('warna', 'ColorController@index');
+  Route::post('warna/upload', 'ColorController@store');
 });
 // end admin
 
