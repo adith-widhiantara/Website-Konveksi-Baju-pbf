@@ -17,6 +17,8 @@ class CreateBuysTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->nullable($value = true);
             $table->integer('product_id')->nullable($value = true);
+            $table->integer('desain_id')->nullable($value = true);
+            $table->integer('color_id')->nullable($value = true);
             $table->string('ukuran')->nullable($value = true);
             $table->timestamps();
         });

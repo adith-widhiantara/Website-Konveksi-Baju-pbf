@@ -26,15 +26,12 @@
 </nav>
 <!-- End Navbar -->
 
-<div class="">
-  <div class="kain">
-    <img src="{{ asset('img/listkain/backgroundkain.jpg') }}" class="img-fluid kain" alt="Responsive image">
-  </div>
   <div class="card form1">
     <div class="card-header daftar">Pilih Desain</div>
   <div class="card-body gambar">
 
         <form method="POST" action="">
+            @method('patch')
             @csrf
 
 
@@ -60,6 +57,6 @@
 
   </div>
 </div>
-</div>
+
 
 @endsection

@@ -50,7 +50,7 @@ Route::prefix('home')->group(function () {
   Route::get('product', 'BuyingController@kain');
   Route::post('product', 'BuyingController@upkain');
   Route::get('product/desain/{buy}', 'BuyingController@desain');
-  Route::post('product/desain', 'BuyingController@updesain');
+  Route::patch('product/desain/{buy}', 'BuyingController@updesain');
   Route::get('product/desain/warna', 'BuyingController@color');
   Route::post('product/desain/warna', 'BuyingController@upcolor');
   Route::get('keranjang', 'BuyingController@indexkeranjang');

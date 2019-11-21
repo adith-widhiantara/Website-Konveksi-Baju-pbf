@@ -23,16 +23,18 @@ class BuyingController extends Controller
       $buy->product_id = $request->product_id;
       Auth::user()->buy()->save($buy);
 
-      return redirect('home/product/desain/'.$buy->id);
+      return redirect('home/product/desain/');
     }
 
     public function desain()
     {
       $desain = Desain::all();
-      return view('user.desain', ['desain' => $desain]);
+      $buy = Buy::all();
+      return view('user.desain', ['desain' => $desain, 'buy' => $buy]);
+      // return view('user.desain', compact('desain', 'buy'));
     }
 
-    public function updesain(Request $request, Buy $buy){
+    public function updesain(Request $request){
       Buy::where('user_id', Auth::user()->id)
             ->update([
             'desain_id' => $request -> desain_id,

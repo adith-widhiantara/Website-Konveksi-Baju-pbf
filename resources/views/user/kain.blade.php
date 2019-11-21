@@ -5,6 +5,7 @@
 @section('bootstrap')
 <head>
   <link rel="stylesheet" href="{{ asset('css/product.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/kain.css') }}">
 </head>
 <!-- Navbar -->
 <nav class="navbar navbar-light bg-dark fixed-top">
@@ -26,39 +27,34 @@
 </nav>
 <!-- End Navbar -->
 
-<div class="">
-  <div class="kain">
-    <img src="{{ asset('img/listkain/backgroundkain.jpg') }}" class="img-fluid kain" alt="Responsive image">
-  </div>
+<!-- Form -->
+<div class="formkain">
   <div class="card form1">
-  <div class="card-header daftar">Pilih Kain</div>
-  <div class="card-body gambar">
-
-        <form action="product" method="post">
-            @csrf
-            <div class="row">
-              @foreach( $product as $pro )
-              <div class="col-md-4 col-lg-4 col-sm-4">
-                <label>
-                  <input type="radio" name="product_id" class="card-input-element" value="{{ $pro -> id }}" />
-                  <div class="card panel panel-default card-input">
-                    <img src="{{ asset('imgupl/kain/'.$pro -> file) }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ $pro -> jeniskain }}</h5>
-                      <p class="card-text">{{ $pro -> keterangan }}</p>
-                    </div>
+    <div class="card-header daftar">Pilih Kain</div>
+    <div class="card-body gambar">
+      <form action="product" method="post">
+          @csrf
+          <div class="row">
+            @foreach( $product as $pro )
+            <div class="col-md-4 col-lg-4 col-sm-4">
+              <label>
+                <input type="radio" name="product_id" class="card-input-element" value="{{ $pro -> id }}" />
+                <div class="card panel panel-default card-input">
+                  <img src="{{ asset('imgupl/kain/'.$pro -> file) }}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ $pro -> jeniskain }}</h5>
+                    <p class="card-text">{{ $pro -> keterangan }}</p>
                   </div>
-                </label>
-              </div>
-              @endforeach
-
+                </div>
+              </label>
             </div>
-
-          <button type="submit" class="btn btn-primary tombolnext">Next</button>
-        </form>
-
+            @endforeach
+          </div>
+        <button type="submit" class="btn btn-primary tombolnext">Next</button>
+      </form>
+    </div>
   </div>
 </div>
-</div>
+<!-- End Form -->
 
 @endsection
