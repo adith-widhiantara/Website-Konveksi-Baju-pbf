@@ -60,3 +60,7 @@ label {
 .gambar img{
   height: 150px;
 }
+
+.gambar .tombolnext{
+  float: right;
+}

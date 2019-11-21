@@ -6,6 +6,7 @@ use Auth;
 use App\Buy;
 use App\Product;
 use App\Desain;
+use App\Color;
 use Illuminate\Http\Request;
 
 class BuyingController extends Controller
@@ -22,7 +23,7 @@ class BuyingController extends Controller
       $buy->product_id = $request->product_id;
       Auth::user()->buy()->save($buy);
 
-      return redirect('home/product/desain');
+      return redirect('home/product/desain/'.$buy->id);
     }
 
     public function desain()
@@ -31,13 +32,32 @@ class BuyingController extends Controller
       return view('user.desain', ['desain' => $desain]);
     }
 
-    public function updesain(Request $request){
+    public function updesain(Request $request, Buy $buy){
       Buy::where('user_id', Auth::user()->id)
             ->update([
             'desain_id' => $request -> desain_id,
           ]);
 
-      return redirect('/home');
+      return redirect('home/product/desain/warna');
+    }
+
+    public function color(){
+      $color = Color::all();
+      return view('user.warna', ['color'=> $color]);
+    }
+
+    public function upcolor(Request $request){
+      Buy::where('user_id', Auth::user()->id)
+            ->update([
+            'color_id' => $request -> color_id,
+          ]);
+
+      return redirect('home');
+    }
+
+    public function indexkeranjang(){
+      $buy = Buy::where('user_id', Auth::user()->id)->get();
+      return view('user.keranjang', ['buy' => $buy]);
     }
 
     /**

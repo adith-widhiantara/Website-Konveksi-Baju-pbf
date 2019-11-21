@@ -21,4 +21,8 @@ class Buy extends Model
   public function desain(){
     return $this->belongsTo(Desain::class);
   }
+
+  public function color(){
+    return $this->belongsTo(Color::class);
+  }
 }

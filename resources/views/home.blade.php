@@ -14,7 +14,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="">Home</a></li>
         <li><a href="home/product">Produk Kami</a></li>
-        <li><a href="">Keranjang</a></li>
+        <li><a href="{{ url('home/keranjang') }}">Keranjang</a></li>
         <li><a class='dropdown-trigger btn grey darken-3 akun' href='#' data-target='dropdown1'>{{ Auth::user()->Nama }}</a></li>
 
         <ul id='dropdown1' class='dropdown-content'>
@@ -150,25 +150,5 @@
 </footer>
 <!-- End Footer -->
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.slider');
-  var instances = M.Slider.init(elems,{
-    indicators: false,
-    height: 500
-  });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.parallax');
-  var instances = M.Parallax.init(elems);
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems,{
-      hover: true
-    });
-  });
-</script>
 @endsection

@@ -70,7 +70,7 @@
 
           <div class="form-group">
             <label for="Alamat">Alamat</label>
-            <input type="text" class="form-control @error('Alamat') is-invalid @enderror" id="Alamat" placeholder="e.g : Aditya S. Widhiantara" name="Alamat" value="{{ old('Alamat') }}">
+            <input type="text" class="form-control @error('Alamat') is-invalid @enderror" id="Alamat" placeholder="e.g : Jln. Danau Toba 47A Jember" name="Alamat" value="{{ old('Alamat') }}">
             @error('Alamat')
               <div class="invalid-feedback">{{ $message }}</div>
             @enderror

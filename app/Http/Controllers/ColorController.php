@@ -14,7 +14,13 @@ class ColorController extends Controller
      */
     public function index()
     {
-        return view('admin.product.warna');
+      $color = Color::all();
+      $role = Auth()->user()->role;
+      if (Auth()->user()->role == 'admin') {
+        return view('admin.product.warna', ['color' => $color]);
+      }else if (Auth()->user()->role == 'subadmin') {
+
+      }
     }
 
     /**
@@ -35,7 +41,23 @@ class ColorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request, [
+        'Warna' => 'required',
+        'Gambar' => 'required',
+      ]);
+
+        $Gambar = $request->file('Gambar');
+        $nama_Gambar = time()."_".$Gambar->getClientOriginalName();
+
+        $tujuan_upload = 'imgupl/warna';
+        $Gambar->move($tujuan_upload,$nama_Gambar);
+
+        Color::create([
+          'Warna' => $request->Warna,
+          'Gambar' => $nama_Gambar,
+        ]);
+
+        return redirect('home/warna');
     }
 
     /**

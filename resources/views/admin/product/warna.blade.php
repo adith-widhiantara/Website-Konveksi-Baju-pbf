@@ -8,7 +8,7 @@
 <!-- Form -->
 <div class="row">
   <div class="col-6">
-    <form action="{{ url('home/desain/upload' )}}" method="post" enctype="multipart/form-data">
+    <form action="{{ url('home/warna/upload' )}}" method="post" enctype="multipart/form-data">
       @csrf
 
       <div class="row">
@@ -31,5 +31,35 @@
   </div>
 </div>
 <!-- End Form -->
+
+<!-- Hoverable Table -->
+<div class="tabelhover">
+  <div class="col-8">
+    <div class="card">
+      <h5 class="card-header">Data Warna Custom Clothing</h5>
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Warna</th>
+                <th scope="col">Gambar</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach( $color as $col )
+            <tr>
+              <td>{{ $loop -> iteration}}</td>
+              <td>{{ $col -> Warna }}</td>
+              <td><img src="{{ url('imgupl/warna/'.$col -> Gambar) }}" alt="" class="img-thumbnail"></td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Hoverable Table -->
 
 @endsection

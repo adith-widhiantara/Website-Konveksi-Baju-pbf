@@ -31,7 +31,7 @@
     <img src="{{ asset('img/listkain/backgroundkain.jpg') }}" class="img-fluid kain" alt="Responsive image">
   </div>
   <div class="card form1">
-    <div class="card-header daftar">Pilih Kain</div>
+  <div class="card-header daftar">Pilih Kain</div>
   <div class="card-body gambar">
 
         <form action="product" method="post">
@@ -45,6 +45,7 @@
                     <img src="{{ asset('imgupl/kain/'.$pro -> file) }}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{ $pro -> jeniskain }}</h5>
+                      <p class="card-text">{{ $pro -> keterangan }}</p>
                     </div>
                   </div>
                 </label>
@@ -53,7 +54,7 @@
 
             </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary tombolnext">Next</button>
         </form>
 
   </div>

@@ -20,6 +20,26 @@
       <!--JavaScript at end of body for optimized loading-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-      
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.slider');
+        var instances = M.Slider.init(elems,{
+          indicators: false,
+          height: 500
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.parallax');
+        var instances = M.Parallax.init(elems);
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.dropdown-trigger');
+          var instances = M.Dropdown.init(elems,{
+            hover: true
+          });
+        });
+      </script>
     </body>
   </html>
