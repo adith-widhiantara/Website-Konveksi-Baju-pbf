@@ -36,12 +36,16 @@ Route::post('dftadmin', 'UserController@store');
 Route::prefix('home')->group(function () {
   Route::get('dataadmin', 'UserController@indexadmin');
   Route::get('datacust', 'UserController@indexcust');
+  Route::get('transaksi', 'BuyingController@index');
+
+  // Upload product
   Route::get('bahankain', 'ProductController@bahankain');
   Route::post('bahankain/upload', 'ProductController@store');
   Route::get('desain', 'DesainController@desain');
   Route::post('desain/upload', 'DesainController@store');
   Route::get('warna', 'ColorController@index');
   Route::post('warna/upload', 'ColorController@store');
+  // End Upload product
 });
 // end admin
 
@@ -51,8 +55,8 @@ Route::prefix('home')->group(function () {
   Route::post('product', 'BuyingController@upkain');
   Route::get('product/desain/{buy}', 'BuyingController@desain');
   Route::patch('product/desain/{buy}', 'BuyingController@updesain');
-  Route::get('product/desain/warna', 'BuyingController@color');
-  Route::post('product/desain/warna', 'BuyingController@upcolor');
+  Route::get('product/desain/warna/{buy}', 'BuyingController@color');
+  Route::patch('product/desain/warna/{buy}', 'BuyingController@upcolor');
   Route::get('keranjang', 'BuyingController@indexkeranjang');
 });
 // End User

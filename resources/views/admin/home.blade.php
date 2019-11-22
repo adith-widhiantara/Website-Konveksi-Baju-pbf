@@ -37,7 +37,9 @@
                           <span class="status"></span><span class="ml-2">Selamat Bekerja</span>
                       </div>
                       <a class="dropdown-item" href="#"><i class="fa fa-user-o mr-2"></i>Akun</a>
-                      <a class="dropdown-item" href="{{url('registeradm')}}"><i class="fa fa-user-o mr-2"></i>Daftarkan Admin</a>
+                      @if(Auth::user()->role == "admin")
+                        <a class="dropdown-item" href="{{url('registeradm')}}"><i class="fa fa-user-o mr-2"></i>Daftarkan Admin</a>
+                      @endif
                       <a class="dropdown-item" href="{{url('logout')}}"><i class="fa fa-sign-out mr-2"></i>Logout</a>
                   </div>
               </li>
@@ -76,31 +78,40 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Akun</a>
-                        <div id="submenu-2" class="collapse submenu bg-light" style="">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{url('home/dataadmin')}}">Admin</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{url('home/datacust')}}">Pembeli</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    @if(Auth::user()->role == "admin")
+                      <li class="nav-item">
+                          <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Akun</a>
+                          <div id="submenu-2" class="collapse submenu bg-light" style="">
+                              <ul class="nav flex-column">
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="{{url('home/dataadmin')}}">Admin</a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="{{url('home/datacust')}}">Pembeli</a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </li>
+                    @elseif(Auth::user()->role == "subadmin")
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{url('home/datacust')}}">Pembeli</a>
+                      </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-money" aria-hidden="true"></i>Transaksi</a>
                         <div id="submenu-3" class="collapse submenu bg-light" style="">
                             <ul class="nav flex-column">
+                              <li class="nav-item">
+                                  <a class="nav-link" href=" {{url('home/transaksi')}} ">Semua Transaksi</a>
+                              </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">Transaksi Berlangsung</a>
+                                    <a class="nav-link" href="#">Transaksi Berlangsung</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">Transaksi Berhasil</a>
+                                    <a class="nav-link" href="#">Transaksi Berhasil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">Transaksi Gagal</a>
+                                    <a class="nav-link" href="#">Transaksi Gagal</a>
                                 </li>
                             </ul>
                         </div>
@@ -116,7 +127,7 @@
 <div class="dashboard-wrapper">
   <div class="dashboard-finance">
     <div class="container-fluid dashboard-content">
-@yield('admin')
+      @yield('admin')
     </div>
   </div>
 </div>

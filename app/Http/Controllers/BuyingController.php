@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class BuyingController extends Controller
 {
+    // Proses Kain
     public function kain()
     {
       $product = Product::all();
@@ -22,40 +23,40 @@ class BuyingController extends Controller
       $buy = new Buy;
       $buy->product_id = $request->product_id;
       Auth::user()->buy()->save($buy);
-
-      return redirect('home/product/desain/');
+      return redirect('home/product/desain/'.$buy->id);
     }
+    // End Proses Kain
 
-    public function desain()
+    // Proses Desain
+    public function desain(Buy $buy)
     {
       $desain = Desain::all();
-      $buy = Buy::all();
-      return view('user.desain', ['desain' => $desain, 'buy' => $buy]);
-      // return view('user.desain', compact('desain', 'buy'));
+      return view('user.desain', ['desain' => $desain]);
     }
 
-    public function updesain(Request $request){
-      Buy::where('user_id', Auth::user()->id)
+    public function updesain(Request $request, Buy $buy){
+      Buy::where('id', $buy->id)
             ->update([
             'desain_id' => $request -> desain_id,
           ]);
-
-      return redirect('home/product/desain/warna');
+      return redirect('home/product/desain/warna/'.$buy->id);
     }
+    // End Proses Desain
 
+    // Proses Color
     public function color(){
       $color = Color::all();
       return view('user.warna', ['color'=> $color]);
     }
 
-    public function upcolor(Request $request){
-      Buy::where('user_id', Auth::user()->id)
+    public function upcolor(Request $request, Buy $buy){
+      Buy::where('id', $buy->id)
             ->update([
             'color_id' => $request -> color_id,
           ]);
-
-      return redirect('home');
+      return redirect('home/keranjang');
     }
+    // End Proses Color
 
     public function indexkeranjang(){
       $buy = Buy::where('user_id', Auth::user()->id)->get();
@@ -69,7 +70,8 @@ class BuyingController extends Controller
      */
     public function index()
     {
-        //
+      $buy = Buy::all();
+      return view('admin.transaksi.total', compact('buy'));
     }
 
     /**

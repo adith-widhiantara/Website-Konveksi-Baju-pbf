@@ -11,12 +11,7 @@ class DesainController extends Controller
     public function desain()
     {
       $desain = Desain::all();
-      $role = Auth()->user()->role;
-      if (Auth()->user()->role == 'admin') {
-          return view('admin.product.desain', ['desain' => $desain]);
-      }else if (Auth()->user()->role == 'subadmin') {
-
-      }
+      return view('admin.product.desain', ['desain' => $desain]);
     }
 
     /**

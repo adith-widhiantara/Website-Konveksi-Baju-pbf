@@ -23,13 +23,19 @@ class AuthController extends Controller
       public function role()
       {
           $role = Auth()->user()->role;
-          if (Auth()->user()->role == 'admin') {
-              return view('admin.home');
-          }else if (Auth()->user()->role == 'user') {
+          if (Auth()->user()->role == 'user') {
               return view('home');
-          }else if (Auth()->user()->role == 'subadmin') {
-              return view('admin.subadmin.home');
+          }else{
+              return view('admin.home');
           }
+
+          // if (Auth()->user()->role == 'admin') {
+          //     return view('admin.home');
+          // }else if (Auth()->user()->role == 'user') {
+          //     return view('home');
+          // }else if (Auth()->user()->role == 'subadmin') {
+          //     return view('admin.subadmin.home');
+          // }
       }
 
       public function logout(Request $request) {

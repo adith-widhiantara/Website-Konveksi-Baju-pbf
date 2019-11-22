@@ -16,12 +16,7 @@ class UserController extends Controller
 
     public function indexcust(){
       $datacust = User::where('role', 'user')->get();
-      $role = Auth()->user()->role;
-      if (Auth()->user()->role == 'admin') {
-          return view('admin.datacustomer', ['datacust' => $datacust]);
-      }else if (Auth()->user()->role == 'subadmin') {
-          return view('admin.subadmin.datacustomer', ['datacust' => $datacust]);
-      }
+      return view('admin.datacustomer', ['datacust' => $datacust]);
     }
 
     /**

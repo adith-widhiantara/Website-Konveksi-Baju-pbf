@@ -15,12 +15,7 @@ class ColorController extends Controller
     public function index()
     {
       $color = Color::all();
-      $role = Auth()->user()->role;
-      if (Auth()->user()->role == 'admin') {
-        return view('admin.product.warna', ['color' => $color]);
-      }else if (Auth()->user()->role == 'subadmin') {
-
-      }
+      return view('admin.product.warna', ['color' => $color]);
     }
 
     /**

@@ -11,12 +11,7 @@ class ProductController extends Controller
     public function bahankain()
     {
       $product = Product::all();
-      $role = Auth()->user()->role;
-      if (Auth()->user()->role == 'admin') {
-          return view('admin.product.bahankainadmin', ['product' => $product]);
-      }else if (Auth()->user()->role == 'subadmin') {
-          return view('admin.subadmin.product.bahankain', ['product' => $product]);
-      }
+      return view('admin.product.bahankainadmin', ['product' => $product]);
     }
 
     /**

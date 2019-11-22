@@ -1,3 +1,8 @@
+body{
+  height: auto;
+  background-color: #475C6C;
+}
+
 .cc{
   margin-top: 10px;
 }
@@ -8,4 +13,9 @@
 
 .index{
   margin-top: 20px;
+}
+
+.carousel-item img{
+  height: 200px !important;
+  margin-bottom: 0 !important;
 }

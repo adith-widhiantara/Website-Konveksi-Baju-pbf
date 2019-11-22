@@ -19,7 +19,10 @@ class CreateBuysTable extends Migration
             $table->integer('product_id')->nullable($value = true);
             $table->integer('desain_id')->nullable($value = true);
             $table->integer('color_id')->nullable($value = true);
+            $table->integer('statuspembayaran')->nullable($value = true);
+            $table->integer('jumlah')->nullable($value = true);
             $table->string('ukuran')->nullable($value = true);
+            $table->string('resi')->nullable($value = true);
             $table->timestamps();
         });
     }

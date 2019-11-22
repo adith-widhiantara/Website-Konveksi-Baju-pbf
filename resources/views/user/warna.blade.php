@@ -27,14 +27,12 @@
 <!-- End Navbar -->
 
 <div class="">
-  <div class="kain">
-    <img src="{{ asset('img/listkain/backgroundkain.jpg') }}" class="img-fluid kain" alt="Responsive image">
-  </div>
   <div class="card form1">
   <div class="card-header daftar">Pilih Kain</div>
   <div class="card-body gambar">
 
         <form action="" method="post">
+          @method('patch')
             @csrf
             <div class="row">
               @foreach( $color as $col )
