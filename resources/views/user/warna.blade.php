@@ -28,7 +28,7 @@
 
 <div class="">
   <div class="card form1">
-  <div class="card-header daftar">Pilih Kain</div>
+  <div class="card-header daftar">Pilih Warna</div>
   <div class="card-body gambar">
 
         <form action="" method="post">
