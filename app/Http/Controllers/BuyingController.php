@@ -69,21 +69,22 @@ class BuyingController extends Controller
             ->update([
             'jumlah' => $request -> jumlah,
             'ukuran' => $request -> ukuran,
+            'biaya' => $request -> jumlah * $buy -> product -> harga,
           ]);
-      return redirect('home/product/desain/warna/detailproduct/biaya'.$buy->id);
+      return redirect('home/keranjang');
     }
     // end detail product
 
     // Biaya
-    public function biaya(Buy $buy){
-      Buy::where('id', $buy->id)
-      $hasilbiaya = $buy -> jumlah * $buy -> product -> harga;
-        ->update([
-          'biaya' => $hasilbiaya,
-        ]);
-
-      return redirect('home/keranjang');
-    }
+    // public function biaya(Buy $buy){
+    //   Buy::where('id', $buy->id)
+    //   $hasilbiaya = $buy -> jumlah * $buy -> product -> harga;
+    //     ->update([
+    //       'biaya' => $hasilbiaya,
+    //     ]);
+    //
+    //   return redirect('home/keranjang');
+    // }
     // End Biaya
 
     public function indexkeranjang(){

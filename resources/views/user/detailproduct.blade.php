@@ -138,9 +138,9 @@
                             <li class="list-group-item">
                               <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span>
+                                  <span class="input-group-text">Jumlah</span>
                                 </div>
-                                <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="jumlah">
+                                <input type="number" id="jumlah" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="jumlah">
                               </div>
                             </li>
                             <li class="list-group-item">
@@ -159,6 +159,4 @@
   @endforeach
 </div>
 <!-- End Cards -->
-
-
 @endsection

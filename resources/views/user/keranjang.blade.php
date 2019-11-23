@@ -107,7 +107,7 @@
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item">Jumlah : <b>{{ $b -> jumlah }}</b></li>
                         <li class="list-group-item">Ukuran : <b>{{ $b -> ukuran }}</b></li>
-                        <li class="list-group-item">Biaya : <b>{{ $b -> color -> Warna }}</b></li>
+                        <li class="list-group-item">Biaya : <b>{{ $b -> biaya }}</b></li>
                       </ul>
                     </div>
                   </div>
