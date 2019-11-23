@@ -47,6 +47,7 @@ class ProductController extends Controller
         'stock' => 'required',
         'keterangan' => 'required',
     		'file' => 'required',
+        'harga' => 'required',
     	]);
 
 		    $file = $request->file('file');
@@ -60,6 +61,7 @@ class ProductController extends Controller
           'stock' => $request->stock,
           'keterangan' => $request->keterangan,
           'file' => $nama_file,
+          'harga' => $request->harga,
     		]);
 
         return redirect('home/bahankain');

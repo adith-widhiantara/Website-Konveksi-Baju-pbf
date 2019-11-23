@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->integer('stock');
             $table->string('keterangan');
             $table->string('file');
+            $table->integer('harga');
             $table->timestamps();
         });
     }

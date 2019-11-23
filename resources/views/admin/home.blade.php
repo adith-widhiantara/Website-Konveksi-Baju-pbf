@@ -104,15 +104,18 @@
                               <li class="nav-item">
                                   <a class="nav-link" href=" {{url('home/transaksi')}} ">Semua Transaksi</a>
                               </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Transaksi Berlangsung</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Transaksi Berhasil</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Transaksi Gagal</a>
-                                </li>
+                              <li class="nav-item">
+                                  <a style="color:#34495e" class="nav-link" href="{{url('home/transaksi/do')}}">Transaksi Berlangsung</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a style="color:#f1c40f" class="nav-link" href="{{url('home/transaksi/check')}}">Transaksi Belum dicek</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a style="color:#2ecc71" class="nav-link" href="{{url('home/transaksi/yes')}}">Transaksi Berhasil</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a style="color:#e74c3c" class="nav-link" href="{{url('home/transaksi/no')}}">Transaksi Gagal</a>
+                              </li>
                             </ul>
                         </div>
                     </li>

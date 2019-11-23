@@ -54,9 +54,37 @@ class BuyingController extends Controller
             ->update([
             'color_id' => $request -> color_id,
           ]);
-      return redirect('home/keranjang');
+      return redirect('home/product/desain/warna/detailproduct/'.$buy->id);
     }
     // End Proses Color
+
+    // detail product
+    public function detailproduct(Buy $buy){
+      $buy = Buy::where('id', $buy->id)->get();
+      return view('user.detailproduct', compact('buy'));
+    }
+
+    public function updetailproduct(Request $request, Buy $buy){
+      Buy::where('id', $buy->id)
+            ->update([
+            'jumlah' => $request -> jumlah,
+            'ukuran' => $request -> ukuran,
+          ]);
+      return redirect('home/product/desain/warna/detailproduct/biaya'.$buy->id);
+    }
+    // end detail product
+
+    // Biaya
+    public function biaya(Buy $buy){
+      Buy::where('id', $buy->id)
+      $hasilbiaya = $buy -> jumlah * $buy -> product -> harga;
+        ->update([
+          'biaya' => $hasilbiaya,
+        ]);
+
+      return redirect('home/keranjang');
+    }
+    // End Biaya
 
     public function indexkeranjang(){
       $buy = Buy::where('user_id', Auth::user()->id)->get();
@@ -72,6 +100,30 @@ class BuyingController extends Controller
     {
       $buy = Buy::all();
       return view('admin.transaksi.total', compact('buy'));
+    }
+
+    public function do()
+    {
+      $buy = Buy::where('statuspembayaran', 0)->get();
+      return view('admin.transaksi.berlangsung', compact('buy'));
+    }
+
+    public function check()
+    {
+      $buy = Buy::where('statuspembayaran', 1)->get();
+      return view('admin.transaksi.check', compact('buy'));
+    }
+
+    public function yes()
+    {
+      $buy = Buy::where('statuspembayaran', 2)->get();
+      return view('admin.transaksi.berhasil', compact('buy'));
+    }
+
+    public function no()
+    {
+      $buy = Buy::where('statuspembayaran', 3)->get();
+      return view('admin.transaksi.gagal', compact('buy'));
     }
 
     /**
