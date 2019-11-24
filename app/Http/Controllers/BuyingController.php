@@ -15,11 +15,15 @@ class BuyingController extends Controller
     public function kain()
     {
       $product = Product::all();
-      return view('user.kain', ['product' => $product]);
+      return view('user.buy.kain', ['product' => $product]);
     }
 
     public function upkain(Request $request)
     {
+      $this->validate($request, [
+        'product_id' => 'required',
+      ]);
+
       $buy = new Buy;
       $buy->product_id = $request->product_id;
       Auth::user()->buy()->save($buy);
@@ -31,10 +35,14 @@ class BuyingController extends Controller
     public function desain(Buy $buy)
     {
       $desain = Desain::all();
-      return view('user.desain', ['desain' => $desain]);
+      return view('user.buy.desain', ['desain' => $desain]);
     }
 
     public function updesain(Request $request, Buy $buy){
+      $this->validate($request, [
+        'desain_id' => 'required',
+      ]);
+
       Buy::where('id', $buy->id)
             ->update([
             'desain_id' => $request -> desain_id,
@@ -46,10 +54,14 @@ class BuyingController extends Controller
     // Proses Color
     public function color(){
       $color = Color::all();
-      return view('user.warna', ['color'=> $color]);
+      return view('user.buy.warna', ['color'=> $color]);
     }
 
     public function upcolor(Request $request, Buy $buy){
+      $this->validate($request, [
+        'color_id' => 'required',
+      ]);
+
       Buy::where('id', $buy->id)
             ->update([
             'color_id' => $request -> color_id,
@@ -61,10 +73,15 @@ class BuyingController extends Controller
     // detail product
     public function detailproduct(Buy $buy){
       $buy = Buy::where('id', $buy->id)->get();
-      return view('user.detailproduct', compact('buy'));
+      return view('user.buy.detailproduct', compact('buy'));
     }
 
     public function updetailproduct(Request $request, Buy $buy){
+      $this->validate($request, [
+        'jumlah' => 'required',
+        'ukuran' => 'required',
+      ]);
+
       Buy::where('id', $buy->id)
             ->update([
             'jumlah' => $request -> jumlah,
@@ -74,18 +91,6 @@ class BuyingController extends Controller
       return redirect('home/keranjang');
     }
     // end detail product
-
-    // Biaya
-    // public function biaya(Buy $buy){
-    //   Buy::where('id', $buy->id)
-    //   $hasilbiaya = $buy -> jumlah * $buy -> product -> harga;
-    //     ->update([
-    //       'biaya' => $hasilbiaya,
-    //     ]);
-    //
-    //   return redirect('home/keranjang');
-    // }
-    // End Biaya
 
     public function indexkeranjang(){
       $buy = Buy::where('user_id', Auth::user()->id)->get();

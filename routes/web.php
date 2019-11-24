@@ -63,7 +63,8 @@ Route::prefix('home')->group(function () {
   Route::patch('product/desain/warna/{buy}', 'BuyingController@upcolor');
   Route::get('product/desain/warna/detailproduct/{buy}', 'BuyingController@detailproduct');
   Route::patch('product/desain/warna/detailproduct/{buy}', 'BuyingController@updetailproduct');
-  Route::patch('product/desain/warna/detailproduct/biaya/{buy}', 'BuyingController@biaya');
+  
+
   Route::get('keranjang', 'BuyingController@indexkeranjang');
 });
 // End User

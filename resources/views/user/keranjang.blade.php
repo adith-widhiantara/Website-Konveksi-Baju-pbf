@@ -84,7 +84,7 @@
                 <div class="card-body">
                   @if($b -> statuspembayaran == 0)
                     <div class="alert alert-danger" role="alert">
-                      Tolong segera selesaikan pembayaran! Klik <a href="#" class="alert-link">Disini!</a> Untuk selesaikan pembayaran.
+                      Tolong segera selesaikan pembayaran! Klik <a href="{{ url('home/keranjang/detail/'.$b->id) }}" class="alert-link">Disini!</a> Untuk selesaikan pembayaran.
                     </div>
                   @elseif($b -> statuspembayaran == 1)
                     <div class="alert alert-warning" role="alert">
