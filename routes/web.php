@@ -41,6 +41,8 @@ Route::prefix('home')->group(function () {
   Route::get('transaksi/check', 'BuyingController@check');
   Route::get('transaksi/yes', 'BuyingController@yes');
   Route::get('transaksi/no', 'BuyingController@no');
+  Route::get('transaksi/{buy}', 'BuyingController@detailtransaksi');
+  Route::patch('transaksi/{buy}', 'BuyingController@upstatuspembayaran');
 
   // Upload product
   Route::get('bahankain', 'ProductController@bahankain');
@@ -63,8 +65,10 @@ Route::prefix('home')->group(function () {
   Route::patch('product/desain/warna/{buy}', 'BuyingController@upcolor');
   Route::get('product/desain/warna/detailproduct/{buy}', 'BuyingController@detailproduct');
   Route::patch('product/desain/warna/detailproduct/{buy}', 'BuyingController@updetailproduct');
-  
 
   Route::get('keranjang', 'BuyingController@indexkeranjang');
+  Route::get('keranjang/detail/{buy}', 'BuyingController@showkeranjang');
+  Route::patch('keranjang/detail/{buy}', 'BuyingController@upbuktitf');
+  Route::get('keranjang/resi/{buy}', 'BuyingController@resi');
 });
 // End User

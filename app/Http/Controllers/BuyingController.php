@@ -92,16 +92,50 @@ class BuyingController extends Controller
     }
     // end detail product
 
+    // Keranjang
     public function indexkeranjang(){
       $buy = Buy::where('user_id', Auth::user()->id)->get();
-      return view('user.keranjang', ['buy' => $buy]);
+      return view('user.keranjang.index', ['buy' => $buy]);
     }
+
+    public function showkeranjang(Buy $buy){
+      $buy = Buy::findOrFail($buy->id);
+      return view('user.keranjang.detail', compact('buy'));
+    }
+
+    public function upbuktitf(Request $request, Buy $buy){
+      $this->validate($request, [
+  			'buktitf' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
+  		]);
+
+      $file = $request->file('buktitf');
+      $nama_file = time()."_".$file->getClientOriginalName();
+
+      $tujuan_upload = 'imgupl/buktitf';
+      $file->move($tujuan_upload,$nama_file);
+
+      Buy::where('id', $buy->id)
+            ->update([
+            'buktitf' => $nama_file,
+            'statuspembayaran' => 1,
+          ]);
+      return redirect('home/keranjang/detail/'.$buy->id);
+    }
+
+    public function resi(Buy $buy)
+    {
+      $buy = Buy::findOrFail($buy->id);
+      return view('user.keranjang.detailresi', compact('buy'));
+    }
+    // End Keranjang
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+     // Transaksi
     public function index()
     {
       $buy = Buy::all();
@@ -131,6 +165,24 @@ class BuyingController extends Controller
       $buy = Buy::where('statuspembayaran', 3)->get();
       return view('admin.transaksi.gagal', compact('buy'));
     }
+
+    public function detailtransaksi(Buy $buy)
+    {
+      $buy = Buy::findOrFail($buy->id);
+      return view('admin.transaksi.detail', compact('buy'));
+    }
+
+    public function upstatuspembayaran(Request $request, Buy $buy)
+    {
+      Buy::where('id', $buy->id)
+            ->update([
+            'statuspembayaran' => 2,
+            'resi' => $request -> resi,
+          ]);
+      return redirect('home/transaksi/'.$buy->id);
+    }
+
+    // End Transaksi
 
     /**
      * Show the form for creating a new resource.

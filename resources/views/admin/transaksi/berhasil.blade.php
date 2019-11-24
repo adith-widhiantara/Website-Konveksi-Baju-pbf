@@ -20,6 +20,7 @@
                 <th>Warna</th>
                 <th>Jumlah</th>
                 <th>Ukuran</th>
+                <th>Resi</th>
                 <th>Aksi</th>
             </tr>
           </thead>
@@ -33,6 +34,7 @@
                   <td>{{ $b -> color -> Warna }}</td>
                   <td>{{ $b -> jumlah }}</td>
                   <td>{{ $b -> ukuran }}</td>
+                  <td>{{ $b -> resi }}</td>
                   <td><a class="btn btn-primary" href="{{ url('home/transaksi/'.$b -> id) }}" role="button">Detail</a></td>
               </tr>
             @endforeach
@@ -46,6 +48,7 @@
                 <th>Warna</th>
                 <th>Jumlah</th>
                 <th>Ukuran</th>
+                <th>Resi</th>
                 <th>Aksi</th>
             </tr>
           </tfoot>

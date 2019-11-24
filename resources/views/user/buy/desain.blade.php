@@ -29,20 +29,17 @@
   <div class="card form1">
     <div class="card-header daftar">Pilih Desain</div>
   <div class="card-body gambar">
-
+    @error('desain_id')
+      <div class="alert alert-danger" role="alert">
+        {{ $message }}
+      </div>
+    @enderror
         <form method="POST" action="">
             @method('patch')
             @csrf
 
 
             <div class="row">
-              @error('desain_id') is-invalid
-              @enderror
-              @error('desain_id')
-                <div class="alert alert-danger" role="alert">
-                  {{ $message }}
-                </div>
-              @enderror
               @foreach( $desain as $des )
               <div class="col-md-4 col-lg-4 col-sm-4">
                 <label>

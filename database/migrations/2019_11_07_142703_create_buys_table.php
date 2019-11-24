@@ -24,6 +24,7 @@ class CreateBuysTable extends Migration
             $table->string('ukuran')->nullable($value = true);
             $table->string('resi')->nullable($value = true);
             $table->integer('biaya')->nullable($value = true);
+            $table->string('buktitf')->nullable($value = true);
             $table->timestamps();
         });
     }

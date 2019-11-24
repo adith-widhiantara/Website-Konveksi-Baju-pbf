@@ -19,3 +19,19 @@ body{
   height: 200px !important;
   margin-bottom: 0 !important;
 }
+
+.detailkeranjang{
+  margin-top: 30px;
+}
+
+.formkeranjang{
+  margin-bottom: 20px;
+}
+
+.buktitf{
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

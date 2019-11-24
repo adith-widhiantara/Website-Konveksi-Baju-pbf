@@ -125,7 +125,7 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="inputGroup-sizing-sm">Ukuran</span>
                                 </div>
-                                <select name="ukuran" class="form-control form-control-sm">
+                                <select name="ukuran" class="form-control form-control-sm @error('ukuran') is-invalid @enderror">
                                   <option value="" selected>Ukuran Baju</option>
                                   <option value="S">S</option>
                                   <option value="M">M</option>
@@ -133,6 +133,9 @@
                                   <option value="XL">XL</option>
                                   <option value="XXL">XXL</option>
                                 </select>
+                                @error('ukuran')
+                                  <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                               </div>
                             </li>
                             <li class="list-group-item">
@@ -140,7 +143,10 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">Jumlah</span>
                                 </div>
-                                <input type="number" id="jumlah" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="jumlah">
+                                <input type="number" id="jumlah" class="form-control @error('jumlah') is-invalid @enderror" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="jumlah">
+                                @error('jumlah')
+                                  <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                               </div>
                             </li>
                             <li class="list-group-item">

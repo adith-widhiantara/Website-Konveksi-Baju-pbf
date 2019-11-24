@@ -32,6 +32,11 @@
   <div class="card form1">
     <div class="card-header daftar">Pilih Kain</div>
     <div class="card-body gambar">
+      @error('product_id')
+        <div class="alert alert-danger" role="alert">
+          {{ $message }}
+        </div>
+      @enderror
       <form action="product" method="post">
           @csrf
           <div class="row">

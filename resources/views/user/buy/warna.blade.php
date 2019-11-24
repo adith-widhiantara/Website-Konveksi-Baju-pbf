@@ -30,7 +30,11 @@
   <div class="card form1">
   <div class="card-header daftar">Pilih Warna</div>
   <div class="card-body gambar">
-
+    @error('color_id')
+      <div class="alert alert-danger" role="alert">
+        {{ $message }}
+      </div>
+    @enderror
         <form action="" method="post">
           @method('patch')
             @csrf
