@@ -49,6 +49,7 @@
                   <div class="card-body">
                     <h5 class="card-title">{{ $pro -> jeniskain }}</h5>
                     <p class="card-text">{{ $pro -> keterangan }}</p>
+                    <p class="card-text">Harga : IDR {{ $pro -> harga }}/pcs</p>
                   </div>
                 </div>
               </label>

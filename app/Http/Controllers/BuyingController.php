@@ -138,31 +138,43 @@ class BuyingController extends Controller
      // Transaksi
     public function index()
     {
-      $buy = Buy::all();
+      $buy = Buy::where('desain_id', '!=', '')->get();
       return view('admin.transaksi.total', compact('buy'));
     }
 
     public function do()
     {
-      $buy = Buy::where('statuspembayaran', 0)->get();
+      $buy = Buy::where('statuspembayaran', 0)
+                ->where('desain_id', '!=', '')
+                ->where('color_id', '!=', '')
+                ->get();
       return view('admin.transaksi.berlangsung', compact('buy'));
     }
 
     public function check()
     {
-      $buy = Buy::where('statuspembayaran', 1)->get();
+      $buy = Buy::where('statuspembayaran', 1)
+                ->where('desain_id', '!=', '')
+                ->where('color_id', '!=', '')
+                ->get();
       return view('admin.transaksi.check', compact('buy'));
     }
 
     public function yes()
     {
-      $buy = Buy::where('statuspembayaran', 2)->get();
+      $buy = Buy::where('statuspembayaran', 2)
+                ->where('desain_id', '!=', '')
+                ->where('color_id', '!=', '')
+                ->get();
       return view('admin.transaksi.berhasil', compact('buy'));
     }
 
     public function no()
     {
-      $buy = Buy::where('statuspembayaran', 3)->get();
+      $buy = Buy::where('statuspembayaran', 3)
+                ->where('desain_id', '!=', '')
+                ->where('color_id', '!=', '')
+                ->get();
       return view('admin.transaksi.gagal', compact('buy'));
     }
 
